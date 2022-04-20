@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="login-heading">Please Login into you account.</h1>
+  <div class="login">
+    <div class="login-triangle"></div>
+    <h2 class="login-header">Log in</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "login-container") do |f| %>
+      <p><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %></p>
+      <p><%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %></p>
+      <p><%= f.submit "Log in" %></p>
+    <% end %>
+    <%= render "users/shared/links" %>
+  </div>
+</div>
+<style type="text/css">
+  body {
+  background: #456;
+  font-family: 'Open Sans', sans-serif;
+}
+</style>
