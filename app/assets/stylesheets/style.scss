@@ -11041,8 +11041,8 @@ blockquote {
   left: 0;
   right: 0;
   z-index: 1030;
-  border-bottom: 1px solid #dee2e6;
-  background-color: #fff;
+  border-bottom: 1px solid white;
+  background: #140808;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 #mainNav .navbar-brand {
@@ -11062,8 +11062,8 @@ blockquote {
 }
 @media (min-width: 992px) {
   #mainNav {
-    border-bottom: 1px solid transparent;
-    background: transparent;
+    border-bottom: 1px solid white;
+    background: #140808;
   }
   #mainNav .navbar-brand {
     color: #fff;

@@ -76,3 +76,4 @@ gem 'bootstrap', '~> 5.1.3'
 gem "devise", "~> 4.8"
 # For fake records
 gem 'faker'
+gem "letter_opener", group: :development

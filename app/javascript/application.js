@@ -1,6 +1,8 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
 import "controllers"
+import './src/jquery.js'
+import './common.js'
 
 window.addEventListener('DOMContentLoaded', () => {
   let scrollPos = 0;
