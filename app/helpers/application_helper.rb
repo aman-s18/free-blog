@@ -5,10 +5,10 @@ module ApplicationHelper
 	end
 
 	def user_image
-		@user.profile.picture rescue "https://picsum.photos/200/300"
+		@user.profile.picture.present? ? @user.profile.picture : "https://picsum.photos/200/300"
 	end
 
 	def valid_user?
-    current_user.id == @user.profile.user_id
+    (current_user.id == @user.profile.user_id) rescue false
   end
 end

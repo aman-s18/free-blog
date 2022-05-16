@@ -1,36 +1,66 @@
-<%= form_with(url: update_profile_user_path(@user), method: :post) do |form| %>
-  <% if profile.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
-
-      <ul>
-        <% profile.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container">
+  <div class="col-md-12">
+    <div class="panel panel-default panel-info Profile">
+      <h1 class="panel-heading"> My Profile </h1>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          <%= form_with(url: update_profile_user_path(@user), method: :post) do |form| %>
+            <% if profile.errors.any? %>
+              <div style="color: red">
+                <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+                <ul>
+                  <% profile.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="form-group">
+              <%= form.label :full_name, style: "display: block", class: "col-sm-2 control-label" %>
+              <div class="col-sm-4">
+                <%= form.text_field "profile[full_name]", value: profile.full_name, class: "form-control", placeholder: "Johan Doe" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= form.label :phone, style: "display: block", class: "col-sm-2 control-label" %>
+              <div class="col-sm-4">
+                <%= form.text_field "profile[phone]", value: profile.phone, class: "form-control", placeholder: "(+91) 9876543210" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= form.label :bio, style: "display: block", class: "col-sm-2 control-label" %>
+              <div class="col-sm-4">
+                <%= form.text_area "profile[bio]", value: profile.bio, class: "form-control", placeholder: "Bio" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= form.label :picture, style: "display: block", class: "col-sm-2 control-label" %>
+              <div class="col-sm-4">
+                <%= form.file_field "profile[picture]", value: profile.picture, class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <%= form.submit "Update Profile", class: "btn btn-primary" %>
+              </div>
+            </div>
+          <%end%>
+        </div>
+        <!-- end form-horizontal -->
+      </div>
+      <!-- end panel-body -->
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :full_name, style: "display: block" %>
-    <%= form.text_field "profile[full_name]", value: profile.full_name %>
+    <!-- end panel -->
   </div>
-
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field "profile[phone]", value: profile.phone %>
-  </div>
-
-  <div>
-    <%= form.label :bio, style: "display: block" %>
-    <%= form.text_area "profile[bio]", value: profile.bio %>
-  </div>
-
-  <div>
-    <%= form.label :picture, style: "display: block" %>
-    <%= form.file_field "profile[picture]" %>
-  </div>
-  <div>
-    <%= form.submit "Update Profile" %>
-  </div>
-<% end %>
+  <!-- end size -->
+</div>
+<!-- end container-fluid -->
+<br/>
+<br/>
+<br/>
+<br/>
